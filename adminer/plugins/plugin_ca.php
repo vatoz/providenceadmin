@@ -4,7 +4,7 @@
 * @license https://www.apache.org/licenses/LICENSE-2.0 Apache License, Version 2.0
 * @license https://www.gnu.org/licenses/gpl-2.0.html GNU General Public License, version 2 (one or other)
 */
-class AdminerB64 {
+class AdminerCA {
         function selectVal($val, $link, $field, $original) {
         if (preg_match("~parameters|vars|changed_fields|field_data|volatile_vars|settings~", $field["field"])) {
 		        if(!is_null($val))          return "<strong>B64</strong> ".base64_decode($val);
