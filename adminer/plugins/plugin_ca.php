@@ -10,7 +10,7 @@ class AdminerCA {
 		        if(!is_null($val))          return "<strong>B64</strong> ".base64_decode($val);
         }
         if (preg_match("~started_on|created_on~", $field["field"])) {
-		        if(!is_null($val))          return "<strong>Timestamp:</strong>".  date("Y-m-d H:i:s", $val);;
+		        if(!is_null($val))          return "<strong>Timestamp:</strong>".  date("Y-m-d H:i:s", $val);
         }
         
         if (preg_match("~table_num~", $field["field"])) {
