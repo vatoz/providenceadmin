@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zabbix_export>
+    <version>5.2</version>
+    <date>2022-01-17T10:20:27Z</date>
+    <groups>
+        <group>
+            <name>Templates/Applications</name>
+        </group>
+    </groups>
+    <templates>
+        <template>
+            <template>CollectiveAccess</template>
+            <name>CollectiveAccess</name>
+            <groups>
+                <group>
+                    <name>Templates/Applications</name>
+                </group>
+            </groups>
+            <applications>
+                <application>
+                    <name>CollectiveAccess</name>
+                </application>
+            </applications>
+            <items>
+                <item>
+                    <name>Indexing Queue</name>
+                    <key>ca.indexing_queue</key>
+                    <applications>
+                        <application>
+                            <name>CollectiveAccess</name>
+                        </application>
+                    </applications>
+                    <triggers>
+                        <trigger>
+                            <expression>{last()}&gt;200000</expression>
+                            <name>Large indexing queue</name>
+                            <priority>HIGH</priority>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <name>Task Queue</name>
+                    <key>ca.task_queue</key>
+                    <applications>
+                        <application>
+                            <name>CollectiveAccess</name>
+                        </application>
+                    </applications>
+                    <triggers>
+                        <trigger>
+                            <expression>{last()}&gt;25000</expression>
+                            <name>Large task queue</name>
+                            <priority>HIGH</priority>
+                            <description>It is {CollectiveAccess:ca.indexing_queue.last()}</description>
+                        </trigger>
+                    </triggers>
+                </item>
+            </items>
+        </template>
+    </templates>
+</zabbix_export>
