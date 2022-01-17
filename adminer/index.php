@@ -13,7 +13,7 @@ function adminer_object() {
     
     $plugins = array(
         // specify enabled plugins here
-        new  new AdminerCA()
+        new  AdminerCA()
     );
     
     /* It is possible to combine customization and plugins:
